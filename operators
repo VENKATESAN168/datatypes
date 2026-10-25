@@ -1,0 +1,84 @@
+1. Arithmetic Operator: Write a Java program to find the sum, difference, product, and division of two numbers.
+class Arithmetic {
+    public static void main(String[] args) {
+        int a = 20, b = 10;
+
+        System.out.println("Sum = " + (a + b));
+        System.out.println("Difference = " + (a - b));
+        System.out.println("Product = " + (a * b));
+        System.out.println("Division = " + (a / b));
+    }
+}
+
+2. Relational Operator: Write a program to compare two numbers and check whether they are equal, greater, or smaller.
+    
+    class Relational {
+    public static void main(String[] args) {
+        int a = 20, b = 10;
+
+        System.out.println("Equal: " + (a == b));
+        System.out.println("Greater: " + (a > b));
+        System.out.println("Smaller: " + (a < b));
+    }
+}
+
+3. Assignment Operator: Write a program using +=, -=, *=, and /= operators on a variable.
+
+
+public class Assignment {
+    public static void main(String[] args) {
+        int a = 20;
+
+        a += 5;
+        System.out.println("After += : " + a);
+
+        a -= 5;
+        System.out.println("After -= : " + a);
+
+        a *= 2;
+        System.out.println("After *= : " + a);
+
+        a /= 4;
+        System.out.println("After /= : " + a);
+    }
+}
+
+4.A student has scored 85 marks out of 100. Store the marks as int, but calculate the percentage as a double.
+
+Question:
+Write a Java program using type casting and arithmetic operators to calculate and display the percentage.
+
+
+public class StudentMarks {
+    public static void main(String[] args) {
+        int marks = 85;
+        int total = 100;
+
+        double percentage = (double) marks / total * 100;
+
+        System.out.println("Marks = " + marks);
+        System.out.println("Percentage = " + percentage + "%");
+    }
+}
+
+5.A product costs ₹999.50. The customer buys 3 products and receives a 10% discount. Calculate the final price using type casting, arithmetic operators, and assignment operators.
+
+
+public class ProductPrice {
+    public static void main(String[] args) {
+        double price = 999.50;
+        int quantity = 3;
+
+        double total = price * quantity;
+        double discount = total * 10 / 100;
+
+        total -= discount;
+
+        System.out.println("Original Price = ₹" + (price * quantity));
+        System.out.println("Discount = ₹" + discount);
+        System.out.println("Final Price = ₹" + total);
+
+        int finalPrice = (int) total;
+        System.out.println("Price as int = ₹" + finalPrice);
+    }
+}
