@@ -1,1 +1,188 @@
-# datatypes
+What are primitive and non-primitive data types in Java?
+Explain the difference with examples such as int, char, String, and arrays.
+
+1. Primitive and Non-Primitive Data Types in Java
+A data type specifies what kind of value a variable can store.
+A. Primitive data types
+Primitive data types are the basic, built-in data types in Java. They store values directly.
+Java has 8 primitive data types.
+          byte	
+          short	
+          int	
+          long	
+          float	
+          double	
+          char	
+          boolean
+public class Main {
+    public static void main(String[] args) {
+        int age = 22;
+        char grade = 'A';
+        double salary = 25000.50;
+        boolean passed = true;
+
+        System.out.println(age);
+        System.out.println(grade);
+        System.out.println(salary);
+        System.out.println(passed);
+    }
+}
+
+B. Non-primitive data types
+Non-primitive data types are reference types. A variable of a reference type holds a reference to an object or array rather than storing the object's entire contents directly.
+
+Examples include:
+- String
+- Arrays
+- Classes and objects
+public class Main {
+    public static void main(String[] args) {
+        String name = "Venkatesan";
+        int[] numbers = {10, 20, 30};
+
+        System.out.println(name);
+        System.out.println(numbers[0]);
+    }
+}
+
+
+2. Explain the internal workflow of a Java program.
+What happens from writing .java code until the program produces output?
+   1. Write source code
+
+Main.java
+
+2. Compile using javac
+
+Checks code and generates bytecode
+
+3. Generate bytecode
+
+Main.class
+
+4. JVM loads and verifies bytecode
+
+Class Loader and Bytecode Verifier
+
+5. JVM executes bytecode
+
+Interpreter and JIT compiler
+
+6. Program produces output
+
+Displays the result on the console
+
+
+Step-by-step explanation
+
+Step 1: Write the program
+
+Create a file named Main.java.
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+
+Step 2: Compile the program
+
+Run this command in the terminal:
+javac Main.java
+The Java compiler checks the source code and generates Main.class, which contains Java bytecode.
+
+Step 3: Load and verify the bytecode
+
+The JVM's class loader loads the required classes. The bytecode verifier checks that the bytecode follows JVM safety and structural rules.
+
+Step 4: Execute the bytecode
+
+The JVM uses an interpreter to execute bytecode. The JIT compiler can compile frequently executed code into native machine code for faster execution.
+
+Step 5: Display the output
+java Main
+
+
+3.  What is JDK, JRE, and JVM in Java?
+Explain the role of each component in running a Java application.
+
+
+ 1. JDK — Java Development Kit
+The JDK provides the tools needed to develop, compile, and run Java programs.
+
+It includes tools such as:
+- javac — compiles Java source code.
+- java — launches Java applications.
+- Debugging and packaging tools.
+- The runtime components needed to execute Java applications.
+Example: You need a JDK to compile Main.java using javac Main.java.
+
+
+2.JRE — Java Runtime Environment
+The JRE traditionally refers to the components required to run Java applications, including the JVM and supporting runtime libraries.
+
+Example: A user can run a compiled Java application without needing the Java compiler, provided a compatible runtime is installed.
+
+3.JVM — Java Virtual Machine
+The JVM loads, verifies, and executes Java bytecode. It manages runtime activities such as memory allocation and garbage collection.
+
+Example: The JVM executes the bytecode in Main.class to produce Hello Java.
+
+
+4.  What is JIT (Just-In-Time) Compiler?
+How does JIT improve the performance of a Java program?
+
+The JIT compiler is a component of the JVM that improves performance by compiling frequently executed bytecode into native machine code at runtime.
+How does JIT work?
+Java bytecode
+     |
+JVM interpreter executes code
+      |
+JVM identifies frequently executed code
+      |
+JIT compiles hot code into native machine code
+       |
+Faster execution of compiled code
+
+Example
+Suppose a Java program contains a loop that executes one million times.
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 1000000; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+5.  Explain the relationship between JDK, JRE, JVM, and JIT.
+How do these components work together to compile and execute Java code?
+JDK, JRE, JVM, and JIT work together to compile and execute Java programs. Each component has a different responsibility.
+1. Relationship diagram
+JDK (Java Development Kit)
+Contains the compiler and development tools
+           |
+
+JRE (Traditional Runtime Environment)
+Provides the JVM and runtime libraries
+           |
+
+JVM (Java Virtual Machine)
+Loads and executes bytecode
+         |
+Interpreter
+Executes bytecode
+   |
+JIT
+Compiles frequently executed code
+
+This is the traditional conceptual structure. Modern Java distributions do not always provide a separate JRE installation.
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+
+        System.out.println(a + b);
+    }
+}
